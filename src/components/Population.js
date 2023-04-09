@@ -85,7 +85,7 @@ const Population = (props) => {
           The {officialName} is a country located in the {region} region,
           specifically in the {subregion} subregion with an estimated population
           of {population.toLocaleString()} people. {languageString}
-          The country's capital is {capital} and the currency that is utilised
+          The country's capital is {capital[0]} and the currency that is utilised
           is the {currencyString}.
         </p>
         {independent && unMember ? (
