@@ -1,15 +1,25 @@
-const createServer = require('./server');
-var functions = require('firebase-functions');
-const countryController = require('./api/controllers/countryController');
+const createServer = require("./server");
+var functions = require("firebase-functions");
+var whitelist = functions.config().api_whitelist;
+const countryController = require("./controllers/countryController");
 
-const controllers = [
-    { path: '/country', handler: countryController },
-]
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: ["GET", "POST", "DELETE", "PATCH"],
+};
 
-const app = createServer(controllers);
+const controllers = [{ path: "/country", handler: countryController }];
 
-exports.api = functions.region('europe-west1').https.onRequest(app);
+const app = createServer(controllers, corsOptions);
+
+exports.api = functions.region("europe-west1").https.onRequest(app);
 
 exports.functionsTimeOut = functions.runWith({
-    timeoutSeconds: 60,
+  timeoutSeconds: 60,
 });

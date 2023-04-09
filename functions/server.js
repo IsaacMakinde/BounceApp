@@ -1,22 +1,17 @@
-const express = require('express');
-const cors = require('cors');
+const express = require("express");
+const cors = require("cors");
 
-const corsOptions = {
-    origin: '*',
-}
+function createServer(controllers, corsOptions) {
+  const app = express();
 
+  app.use(express.json());
+  app.use(cors(corsOptions));
 
-function createServer(controllers) {
-    const app = express();
+  controllers.forEach((controller) => {
+    app.use(controller.path, controller.handler);
+  });
 
-    app.use(express.json());
-    app.use(cors(corsOptions));
-
-    controllers.forEach((controller) => {
-        app.use(controller.path, controller.handler);
-    });
-
-    return app;
+  return app;
 }
 
 module.exports = createServer;

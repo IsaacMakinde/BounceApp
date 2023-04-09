@@ -8,7 +8,6 @@ const baseUrl = "https://restcountries.com/v3.1/name/";
 router.get('/:country', async (req, res) => {
     try {
         const country = req.params.country;
-        console.log(country);
         const response = await axios.get(`${baseUrl}${country}`);
         res.json(response.data);
     } catch (error) {

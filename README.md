@@ -1,70 +1,53 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was initialized using [Create React App](https://github.com/facebook/create-react-app), a popular tool for creating single-page React applications.
 
-## Available Scripts
-
-In the project directory, you can run:
+To start working on the project, follow these steps in the project directory:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This command launches the app in development mode. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This application is hosted on Firebase and communicates with a Firebase function written in Express. It utilizes an API and has CORS enabled for two whitelisted URLs: the Firebase Hosting URL ([https://bouncechall-31e3f.web.app/](https://bouncechall-31e3f.web.app/)) and the local host ([http://localhost:3000/](http://localhost:3000/)).
+
+While it's not best practice to allow communication with localhost in a live project, this setup simplifies the development process. Alternatively, you could create a separate project for development with minor changes to the CORS whitelist.
+
+The Firebase cloud function, built with Express and Node.js, is available at [https://europe-west1-bouncechall-31e3f.cloudfunctions.net/api/country/{countryName}](https://europe-west1-bouncechall-31e3f.cloudfunctions.net/api/country/%7BcountryName%7D). Replace the `countryName` parameter in the URL with the desired country to obtain a JSON object containing extensive country information.
+
+Once the application is running, you'll see a webpage hosted on port 3000 if you are utilising a windows machine, otherwise you may have to replace `"start": "set PORT=3000 && react-scripts start"`  with `"start": react-scripts start --port=3000"`  within the 'package.json' file . The page will automatically reload when you make changes, and lint errors will be displayed in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This command starts the test runner in interactive watch mode. For more information on running tests, visit the [official documentation](https://facebook.github.io/create-react-app/docs/running-tests).
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Executing this command builds the app for production in the `build` folder. React is bundled in production mode, and the build is optimized for top performance. The output is minified, and filenames include hashes for cache management.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+With the build complete, your app is ready for deployment! For further details on deployment, refer to the [official guide](https://facebook.github.io/create-react-app/docs/deployment).# Getting Started with Create React App
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project was initialized using [Create React App](https://github.com/facebook/create-react-app), a popular tool for creating single-page React applications.
 
-### `npm run eject`
+To start working on the project, follow these steps in the project directory:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `npm start`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This command launches the app in development mode. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This application is hosted on Firebase and communicates with a Firebase function written in Express. It utilizes an API and has CORS enabled for two whitelisted URLs: the Firebase Hosting URL ([https://bouncechall-31e3f.web.app/](https://bouncechall-31e3f.web.app/)) and the local host ([http://localhost:3000/](http://localhost:3000/)).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+While it's not best practice to allow communication with localhost in a live project, this setup simplifies the development process. Alternatively, you could create a separate project for development with minor changes to the CORS whitelist.
 
-## Learn More
+The Firebase cloud function, built with Express and Node.js, is available at [https://europe-west1-bouncechall-31e3f.cloudfunctions.net/api/country/{countryName}](https://europe-west1-bouncechall-31e3f.cloudfunctions.net/api/country/%7BcountryName%7D). Replace the `countryName` parameter in the URL with the desired country to obtain a JSON object containing extensive country information.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Once the application is running, you'll see a webpage hosted on port 3000 if you are utilising a windows machine, otherwise you may have to replace `"start": "set PORT=3000 && react-scripts start`  with `"start": react-scripts start --port=3000"`  within the 'package.json' file . The page will automatically reload when you make changes, and lint errors will be displayed in the console.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `npm test`
 
-### Code Splitting
+This command starts the test runner in interactive watch mode. For more information on running tests, visit the [official documentation](https://facebook.github.io/create-react-app/docs/running-tests).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### `npm run build`
 
-### Analyzing the Bundle Size
+Executing this command builds the app for production in the `build` folder. React is bundled in production mode, and the build is optimized for top performance. The output is minified, and filenames include hashes for cache management.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+With the build complete, your app is ready for deployment! For further details on deployment, refer to the [official guide](https://facebook.github.io/create-react-app/docs/deployment).
