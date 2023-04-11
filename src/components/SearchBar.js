@@ -1,24 +1,19 @@
-import React from "react";
 import { useState } from "react";
 import { getCountry } from "../services/api/ApiService.js";
 import Population from "./Population.js";
 
 function SearchBar() {
   const [query, setQuery] = useState("");
-
   const [results, setResults] = useState({});
-
-  // const [mapSrc, setMapSrc] = useState('');
 
   const handleInputChange = (event) => {
     setQuery(event.target.value);
   };
 
-  const handleSearch = (event) => {
-    if (event.key === "Enter") {
-      getCountry(query)
-        .then((response) => {
-          setResults({
+  const handleSearch = () => {
+    getCountry(query)
+      .then((response) => {
+        setResults({
             name: response[0].name.common,
             officialName: response[0].name.official,
             independent: response[0].independent,
@@ -37,12 +32,15 @@ function SearchBar() {
             flagAlt: response[0].flags.alt,
             coatOfArms: response[0].coatOfArms.png,
           });
-        })
-        .then(() => {
-        })
-        .catch(() => {
-          alert(query + " is not a country");
-        });
+      })
+      .catch(() => {
+        alert(query + " is not a valid country");
+      });
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
     }
   };
 
@@ -57,7 +55,8 @@ function SearchBar() {
               type="text"
               value={query}
               onChange={handleInputChange}
-              onKeyDown={handleSearch}
+              onKeyDown={handleKeyDown}
+              placeholder="Enter country name"
             />
             <span className="icon is-medium is-left">
               <i className="fa fa-search"></i>
@@ -66,6 +65,12 @@ function SearchBar() {
               <i className="fa fa-empire"></i>
             </span>
           </div>
+          <button
+            className="button is-info mt-2"
+            onClick={handleSearch}
+          >
+            Search
+          </button>
         </div>
       </div>
       <div className="card">

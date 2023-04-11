@@ -20,9 +20,8 @@ const Population = (props) => {
 
   if (!population) {
     return (
-      <div className="is-flex-direction column">
-        <p>Type in the name of any country within Searchbar above</p>
-        <p>Information about the country will be displayed here</p>
+      <div>
+        
       </div>
     );
   }
@@ -67,7 +66,6 @@ const Population = (props) => {
             </figure>
             <br></br>
             <p className="subtitle is-6">
-              {" "}
               <em>International country code :</em> {countryCode}
             </p>
           </div>
@@ -84,9 +82,9 @@ const Population = (props) => {
         <p>
           The {officialName} is a country located in the {region} region,
           specifically in the {subregion} subregion with an estimated population
-          of {population.toLocaleString()} people. {languageString}
-          The country's capital is {capital[0]} and the currency that is utilised
-          is the {currencyString}.
+          of {population?.toLocaleString()} people. {languageString}
+          The country's capital is {capital[0]} and the currency that is
+          utilised is the {currencyString}.
         </p>
         {independent && unMember ? (
           <p>

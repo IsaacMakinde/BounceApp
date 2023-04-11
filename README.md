@@ -4,6 +4,11 @@ This project was initialized using [Create React App](https://github.com/faceboo
 
 To start working on the project, follow these steps in the project directory:
 
+Make sure to install the dependencies first.
+```
+npm install
+```
+
 ### `npm start`
 
 This command launches the app in development mode. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the application.

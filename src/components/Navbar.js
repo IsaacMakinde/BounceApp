@@ -16,17 +16,6 @@ function Navbar() {
             <span></span>
           </div>
         </div>
-        <div className="navbar-menu" id="navMenu">
-          <div className="navbar-end">
-            <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link">Account</a>
-              <div className="navbar-dropdown">
-                <hr className="navbar-divider" />
-                <div className="navbar-item">Logout</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </nav>
   );
